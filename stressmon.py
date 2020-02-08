@@ -159,8 +159,8 @@ def _get_parser_run():
         "-d",
         "--duration",
         type=int,
-        default=300,
-        help="stress test duration in seconds (default: 300)",
+        default=600,
+        help="stress test duration in seconds (default: 600 - 10 mins)",
     )
     parser.add_argument(
         "-i",
