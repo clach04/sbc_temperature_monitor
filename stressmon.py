@@ -34,7 +34,7 @@ def cooldown(interval=60, filename=None):
         tme.sleep(interval)
         tmp = measure_temp(filename=filename)
         print(
-            "Current temperature: {:4.1f}°C - Previous temperature: {:4.1f}°C".format(
+            "Current temperature: {:4.1f}'C - Previous temperature: {:4.1f}'C".format(
                 tmp, prev_tmp
             )
         )
@@ -95,7 +95,7 @@ def measure_ambient_temperature(sensor_type="2302", pin="23"):
     # (because Linux can't guarantee the timing of calls to read the sensor).
     # The read_retry call will attempt to read the sensor 15 times with a 2 second delay.
     # Care should be taken when reading if on a time sensitive path
-    # Temperature is in °C but can also be None
+    # Temperature is in 'C but can also be None
     return temperature
 
 
@@ -244,13 +244,13 @@ def run(argv=None):
             ambient.append(ambient_temperature)
             delta_t = temps[-1] - ambient[-1]
             print(
-                "Temperature (current | ambient | ΔT): {:4.1f}°C | {:4.1f}°C | {:4.1f}°C - Frequency: {:4.0f}MHz".format(
+                "Temperature (current | ambient | dT): {:4.1f}'C | {:4.1f}'C | {:4.1f}'C - Frequency: {:4.0f}MHz".format(
                     temps[-1], ambient[-1], delta_t, freqs[-1]
                 )
             )
         else:
             print(
-                "Current temperature: {:4.1f}°C - Frequency: {:4.0f}MHz".format(
+                "Current temperature: {:4.1f}'C - Frequency: {:4.0f}MHz".format(
                     temps[-1], freqs[-1]
                 )
             )
