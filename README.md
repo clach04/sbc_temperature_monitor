@@ -2,6 +2,9 @@
 
 collection of temperature monitoring and stress notes/tools for SBCs like (Linux) ARM based Raspberry Pi and Rock64
 
+## Tools
+
+  * speedtemp.sh - (bash) shell script for monitoring CPU speed and temperature (on Raspberry Pi also includes throttling information). Relies on; vcgencmd, perl, awk, sed
 
 ## Useful resources
 
