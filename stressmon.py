@@ -265,15 +265,6 @@ def run(argv=None):
     version_comment = "# This file was created by stressberry v{} on {}\n".format(
             __version__, datetime.datetime.now()
         )
-    """
-    # fixme use version_comment
-    args.outfile.write(
-        "# This file was created by stressberry v{} on {}\n".format(
-            __version__, datetime.datetime.now()
-        )
-    )
-    yaml.dump(
-    """
     #args.outfile.write(
     json.dump(
         {
