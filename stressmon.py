@@ -16,7 +16,20 @@ __version__ = "0.2.2"
 
 import subprocess
 import time as tme
-from os import cpu_count
+try:
+    from os import cpu_count
+except ImportError:
+    # Probably Python2
+    def cpu_count():
+        # TODO
+        # grep -c processor /proc/cpuinfo  # count occurences of 'processor'
+        # getconf _NPROCESSORS_ONLN
+        try:
+            result = subprocess.check_output(['getconf', '_NPROCESSORS_ONLN'])
+        except subprocess.CalledProcessError:
+            result = subprocess.check_output(['grep', '-c', 'processor', '/proc/cpuinfo'])
+            # if this fails could manually open up /proc/cpuinfo and count
+        return int(result)
 
 
 def stress_cpu(num_cpus, time):
