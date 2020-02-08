@@ -136,7 +136,7 @@ def test(stress_duration, idle_duration, cores):
 def _get_version_text():
     return "\n".join(
         [
-            "stressberry {} [Python {}.{}.{}]".format(
+            "stressmon {} [Python {}.{}.{}]".format(
                 __version__,
                 sys.version_info.major,
                 sys.version_info.minor,
@@ -158,8 +158,8 @@ def _get_parser_run():
         "-n",
         "--name",
         type=str,
-        default="stressberry data",
-        help="name the data set (default: 'stressberry data')",
+        default="stressmon data",
+        help="name the data set (default: 'stressmon data')",
     )
     parser.add_argument(
         "-t",
@@ -276,7 +276,7 @@ def run(argv=None):
     time0 = times[0]
     times = [tm - time0 for tm in times]
 
-    version_comment = "# This file was created by stressberry v{} on {}\n".format(
+    version_comment = "# This file was created by stressmon v{} on {}\n".format(
             __version__, datetime.datetime.now()
         )
     #args.outfile.write(
