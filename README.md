@@ -5,6 +5,7 @@ collection of temperature monitoring and stress notes/tools for SBCs like (Linux
 ## Tools
 
   * speedtemp.sh - (bash) shell script for monitoring CPU speed and temperature (on Raspberry Pi also includes throttling information). Relies on; vcgencmd, perl, awk, sed
+  * stressmon.py - run `stress` and monitor temperature usage - essentially a portable/light weight version of stressberry-plot. Requires `stress`, and will use `vcgencmd` if available. Generates json log files suitable for `stress_plot.py` (below)
   * stress_plot.py - python (2 or 3) script for plotting multiple json files that contain temperature readings. Generates an interactive SVG (using https://github.com/Kozea/pygal/)
       * convert_stressberry.py - can be used to convert to/from https://github.com/nschloe/stressberry format data files - also see https://github.com/clach04/stressberry/tree/rock64 and https://github.com/clach04/rock64_vcgencmd
 
