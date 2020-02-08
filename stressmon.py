@@ -197,13 +197,14 @@ def _get_parser_run():
         default=None,
         help="measure ambient temperature. Sensor Type [11|22|2302] <GPIO Number> e.g. 2302 26",
     )
-    parser.add_argument("outfile", type=argparse.FileType("w"), help="output data file")
+    parser.add_argument("outfile", type=argparse.FileType("w"), help="output data filename")
+    #parser.add_argument("outfile", type=str, help="output data filename")
     return parser
 
 
 def run(argv=None):
     parser = _get_parser_run()
-    args = parser.parse_args(argv)
+    args = parser.parse_args()  # do not pass in raw argv, argparse has problems if script name is passed in
 
     # Cool down first
     print("Awaiting stable baseline temperature...")
