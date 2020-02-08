@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: us-ascii -*-
+# vim:ts=4:sw=4:softtabstop=4:smarttab:expandtab
+#
+
 import argparse
 import datetime
 import sys
@@ -282,4 +287,16 @@ def run(argv=None):
         args.outfile,
     )
     return
+
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv
+
+    run(argv)
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
 
