@@ -27,7 +27,7 @@ for filename in glob.glob('*.json'):
     t_chart.add(data['name'], zip(data['time'], data['temperature']))
 
 
-result = t_chart.render()
-
-print(result)  # dump SVG to stdout
+#result = t_chart.render()
+#print(result)  # dump SVG to stdout - py2 only
+t_chart.render_to_file('chart.svg')  # py2 and py3
 
