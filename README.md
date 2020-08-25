@@ -21,7 +21,10 @@ stress_plot.py needs pygal:
     pip install pygal
 
 
-    ./stressmon.py pi3_py2.json
+    ./stressmon.py pi3_py2.json  # needs vcgencmd (i.e. Rasbian for Raspberry Pi)
+    python stressmon.py  -t /sys/class/thermal/thermal_zone0/temp -f /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq --cooldown 0 -n 'rock64_armbian_pi_box_lid_fan_on' rock64_armbian_pi_box_lid_fan_on.json  # should work for more devices/processors under Linux with default CPU info
+
+
     ./stress_plot.py | gzip > demo.svgz
 
 ## Useful resources
