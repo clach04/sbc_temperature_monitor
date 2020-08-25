@@ -26,7 +26,8 @@ def generate_pygal_chart():
         data = json.load(file_in)
         file_in.close()
 
-        t_chart.add(data['name'], zip(data['time'], data['temperature']))
+        # NOTE Python 3.8 needs list cast, iterator does not work
+        t_chart.add(data['name'], list(zip(data['time'], data['temperature'])))
     return t_chart
 
 
