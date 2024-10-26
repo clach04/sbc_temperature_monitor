@@ -16,10 +16,11 @@ collection of temperature monitoring and stress notes/tools for SBCs like (Linux
 
 ## Running
 
-stress_plot.py needs pygal:
+Installing, stress_plot.py needs pygal. Known to work with Python 3.12.5 and pygal-3.0.5:
 
     pip install pygal
 
+Running:
 
     ./stressmon.py pi3_py2.json  # needs vcgencmd (i.e. Raspbian for Raspberry Pi)
 

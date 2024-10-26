@@ -28,6 +28,10 @@ def generate_pygal_chart():
 
         # NOTE Python 3.8 needs list cast, iterator does not work
         t_chart.add(data['name'], list(zip(data['time'], data['temperature'])))
+
+        # rock64 cpu frequency never changes, even when throttled, so not added at this time
+        #t_chart.add('CPU ' + data['name'], list(zip(data['time'], data['cpu frequency'])), secondary=True)
+        # TODO 'cpu frequency' https://www.pygal.org/en/stable/documentation/configuration/axis.html#secondary-range
     return t_chart
 
 
